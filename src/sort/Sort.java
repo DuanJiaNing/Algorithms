@@ -2,29 +2,7 @@ package sort;
 
 import util.Utils;
 
-/**
- * 待排序的数组断定元素个数不少于 2 （不能小于 2 ）
- */
 public class Sort {
-
-
-    /**
-     * 冒泡升序
-     * 从数组头部开始依次往后遍历，将当前位置元素与后一个位置元素比较，不满足排序规则就交换
-     * <p>
-     * 注意：
-     * 第一层循环最后一个元素无需比较
-     */
-    public int[] bubbleSort(int... sour) {
-        for (int i = 0; i < sour.length - 1; i++) {
-            for (int j = i + 1; j < sour.length; j++) {
-                if (sour[j] < sour[i]) {
-                    Utils.swap(i, j, sour);
-                }
-            }
-        }
-        return sour;
-    }
 
 
     /**
@@ -143,14 +121,5 @@ public class Sort {
         quickSort(arr, low, p - 1);
         quickSort(arr, p + 1, high);
     }
-
-    /**
-     * 堆排序
-     */
-    //TODO
-    public void heapSort(int[] sour) {
-
-    }
-
 
 }
