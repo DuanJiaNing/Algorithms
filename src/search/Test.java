@@ -15,11 +15,10 @@ public class Test {
         Integer[] s1 = {1, 2, 4, 3, 5, 7};
 
         BinarySearch<Integer> search = new BinarySearch<>(true);
-        int index = search.search(s1, 7);
+        int index = search.search(s1, 7); // 5
         p.accept(index);
 
     }
-
 
     public static Consumer<Object> p = System.out::println;
 
