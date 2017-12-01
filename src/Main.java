@@ -1,17 +1,18 @@
 import sort.Sortable;
 import sort.insert.InsertionSort;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.function.Consumer;
 
 public class Main {
 
     public static void main(String[] args) {
-
         Integer[] s = {9, 8, 7, 6, 3,};
         Integer[] s1 = {1, 2, 4, 3, 5, 7};
         Integer[] s2 = {1, -2, 22223, 489, 335, 23437, 3, 4, 56, 76, 98, 12, 3421, 654};
-
         test(new InsertionSort<>(), s1);
     }
 
