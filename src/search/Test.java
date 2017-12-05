@@ -17,7 +17,6 @@ public class Test {
         BinarySearch<Integer> search = new BinarySearch<>(true);
         int index = search.search(s1, 7); // 5
         p.accept(index);
-
     }
 
     public static Consumer<Object> p = System.out::println;
