@@ -2,6 +2,7 @@ package util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 import java.util.function.Consumer;
 
 /**
@@ -30,6 +31,16 @@ public class Utils {
 
     public static void log(CharSequence msg) {
         P.accept(currentTime() + ": " + msg + "\n");
+    }
+
+    public static Integer[] getRandomArrays(int size, int bound) {
+        Random r = new Random();
+        Integer[] is = new Integer[size];
+        for (int i = 0; i < size; i++) {
+            is[i] = r.nextInt(bound);
+        }
+
+        return is;
     }
 
 }

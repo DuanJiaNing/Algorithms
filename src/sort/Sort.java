@@ -66,19 +66,23 @@ public class Sort {
      * index     0 1  2  3  4  5  6  7  8  9
      * arr      72,6,57,88,60,42,83,73,48,85
      * <p>
-     * 1. low = 0,high = 9,X = arr[0] = 72 从 high 往前遍历，找到第一个 arr[8] <= X : {@code arr[0] = arr[8];low++;} //初始
+     * 1. low = 0,high = 9,X = arr[0] = 72 从 high 往前遍历，
+     * 找到第一个 arr[8] <= X : {@code arr[0] = arr[8];low++;} //初始
      * index     0 1  2  3  4  5  6  7  8  9
      * arr      .48,6,57,88,60,42,83,73,.48,85
      * <p>
-     * 2. low = 1,high = 8,X = 72 从 low 接着往后遍历，找到第一个 arr[3] >= X : {@code arr[8] = arr[3];high--;}
+     * 2. low = 1,high = 8,X = 72 从 low 接着往后遍历，
+     * 找到第一个 arr[3] >= X : {@code arr[8] = arr[3];high--;}
      * index     0 1  2  3  4  5  6  7  8  9
      * arr      48,6,57,.88,60,42,83,73,88.,85
      * <p>
-     * 3. low = 3,high = 7,X = 72 从 high 接着往前遍历，找到第一个 arr[5] <= X : {@code arr[3] = arr[5];low++;}
+     * 3. low = 3,high = 7,X = 72 从 high 接着往前遍历，
+     * 找到第一个 arr[5] <= X : {@code arr[3] = arr[5];low++;}
      * index     0 1  2  3  4  5  6  7  8  9
      * arr      48,6,57,.42,60,42.,83,73,88,85
      * <p>
-     * 2. low = 4,high = 5,X = 72 从 low 接着往后遍历，找到第一个 arr[6] >= X : {@code 6 > high;} // 结束
+     * 2. low = 4,high = 5,X = 72 从 low 接着往后遍历，
+     * 找到第一个 arr[6] >= X : {@code 6 > high;} // 结束
      */
     private int partition(int[] sour, int low, int high) {
         final int X = sour[low];

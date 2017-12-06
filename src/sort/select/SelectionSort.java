@@ -14,7 +14,26 @@ public class SelectionSort<T> implements Sortable<T> {
 
     @Override
     public int sort(T[] sour, Comparator<T> comparator) {
-        return 0;
+        int count = 0;
+        int minIndex;
+        for (int i = 0; i < sour.length - 1; i++) {
+            minIndex = i;
+            for (int j = i + 1; j < sour.length; j++) {
+                if (comparator.compare(sour[j], sour[minIndex]) < 0) { // current < min
+                    minIndex = j;
+                }
+            }
+
+            if (minIndex > i) {
+                T temp = sour[i];
+                sour[i] = sour[minIndex];
+                sour[minIndex] = temp;
+
+                count++;
+            }
+        }
+
+        return count;
     }
 
 }
