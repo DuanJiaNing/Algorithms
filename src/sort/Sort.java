@@ -1,6 +1,6 @@
 package sort;
 
-import util.Utils;
+import util.P;
 
 public class Sort {
 
@@ -24,7 +24,7 @@ public class Sort {
             }
 
             if (max > sour[index]) {
-                Utils.swap(index, j, sour);
+                P.swap(index, j, sour);
             }
 
             index++;
@@ -45,7 +45,7 @@ public class Sort {
             for (int j = i; j > 0; j--) {
                 if (sour[j - 1] > sour[j]) {
                     // 前面/后面的都是有序序列，只能依次交换，不能找出位置最后直接交换（应插入）
-                    Utils.swap(j - 1, j, sour);
+                    P.swap(j - 1, j, sour);
                 }
             }
         }

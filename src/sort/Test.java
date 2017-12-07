@@ -1,7 +1,7 @@
 package sort;
 
 import sort.select.SelectionSort;
-import util.Utils;
+import util.P;
 
 import java.util.Arrays;
 import java.util.function.Consumer;
@@ -17,7 +17,7 @@ public class Test {
         Integer[] s = {1, 8, 9, 4, 3, 4, 3, 2, 1};
         Integer[] s1 = {1, 2, 4, 3, 5, 7};
         Integer[] s2 = {1, -2, 22223, 489, 335, 23437, 3, 4, 56, 76, 98, 12, 3421, 654};
-        Integer[] s3 = Utils.getRandomArrays(1000, 10000);
+        Integer[] s3 = P.getRandomArrays(1000, 10000);
         test(new SelectionSort<>(), s1); // 升序 交换 1 次
         test(new SelectionSort<>(), s); // 升序 交换 5 次
     }

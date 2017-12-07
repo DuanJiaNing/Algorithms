@@ -8,7 +8,16 @@ import java.util.function.Consumer;
 /**
  * Created by DuanJiaNing on 2017/9/3.
  */
-public class Utils {
+public class P {
+    private static final SimpleDateFormat format = new SimpleDateFormat("dd/MM/YYYY HH:mm:ss-SSS");
+
+    public static void out(Object obj) {
+        System.out.println(format.format(new Date()) + " " + obj);
+    }
+
+    public static void outnl(Object obj) {
+        System.out.printf(format.format(new Date()) + " " + obj);
+    }
 
     public static final Consumer<CharSequence> P = c -> System.out.print(c.toString());
 

@@ -1,6 +1,6 @@
 package gray;
 
-import util.Utils;
+import util.P;
 
 import java.util.Arrays;
 
@@ -65,7 +65,7 @@ public class GrayCode {
     }
 
     public static void main(String[] args) {
-        Utils.P.accept(Arrays.toString(grayCode(8)));
+        P.P.accept(Arrays.toString(grayCode(8)));
     }
 
 }
