@@ -1,6 +1,7 @@
 package util;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Random;
 import java.util.function.Consumer;
@@ -13,6 +14,10 @@ public class P {
 
     public static void out(Object obj) {
         System.out.println(format.format(new Date()) + " " + obj);
+    }
+
+    public static void out(Object[] arr) {
+        System.out.println(format.format(new Date()) + " " + Arrays.toString(arr));
     }
 
     public static void outnl(Object obj) {
