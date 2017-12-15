@@ -1,10 +1,6 @@
 package sort.heap;
 
-import data.heap.ArrayHeap;
-import sort.Sortable;
-import util.P;
-
-import java.util.Comparator;
+import datastructure.heap.ArrayHeap;
 
 /**
  * Created on 2017/11/29.

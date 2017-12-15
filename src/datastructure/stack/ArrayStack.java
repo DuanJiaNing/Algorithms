@@ -1,4 +1,4 @@
-package data.stack;
+package datastructure.stack;
 
 import util.Utils;
 

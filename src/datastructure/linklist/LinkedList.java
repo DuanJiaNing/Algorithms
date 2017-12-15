@@ -1,4 +1,4 @@
-package data.linklist;
+package datastructure.linklist;
 
 import java.lang.reflect.Array;
 

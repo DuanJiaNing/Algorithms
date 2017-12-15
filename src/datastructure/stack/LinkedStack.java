@@ -1,4 +1,4 @@
-package data.stack;
+package datastructure.stack;
 
 /**
  * Created on 2017/12/7.

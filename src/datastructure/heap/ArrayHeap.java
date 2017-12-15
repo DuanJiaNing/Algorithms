@@ -1,4 +1,4 @@
-package data.heap;
+package datastructure.heap;
 
 /**
  * Created on 2017/12/13.

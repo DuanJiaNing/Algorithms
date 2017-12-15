@@ -1,12 +1,11 @@
 package sort;
 
-import data.heap.MiniArrayHeap;
+import datastructure.heap.MiniArrayHeap;
 import sort.heap.HeapSort;
 import sort.select.SelectionSort;
 import util.P;
 
 import java.util.Arrays;
-import java.util.function.Consumer;
 
 /**
  * Created on 2017/12/1.

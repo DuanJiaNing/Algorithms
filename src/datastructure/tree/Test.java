@@ -1,7 +1,4 @@
-package data.tree;
-
-import data.tree.BinaryTree;
-import data.tree.LinkedBinaryTree;
+package datastructure.tree;
 
 import java.util.Iterator;
 import java.util.function.Consumer;

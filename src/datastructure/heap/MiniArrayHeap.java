@@ -1,4 +1,4 @@
-package data.heap;
+package datastructure.heap;
 
 import util.Utils;
 

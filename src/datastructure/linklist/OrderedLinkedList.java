@@ -1,4 +1,4 @@
-package data.linklist;
+package datastructure.linklist;
 
 /**
  * Created on 2017/12/1.
