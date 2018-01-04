@@ -1,5 +1,7 @@
 package datastructure.tree;
 
+import javax.naming.OperationNotSupportedException;
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -9,11 +11,10 @@ import java.util.List;
  *
  * @author DuanJiaNing
  */
-public class LinkedBinaryTree<T extends Comparable<T>> implements BinaryTree<T> {
+public class BinarySearchTree<T extends Comparable<T>> implements BinaryTree<T> {
 
     private Node<T> root;
     private int size = 0;
-    private boolean recursion = true;
 
     @Override
     public boolean add(T value) {
@@ -21,7 +22,7 @@ public class LinkedBinaryTree<T extends Comparable<T>> implements BinaryTree<T> 
             initialRoot(value);
         } else {
             Node<T> current = root;
-            Node<T> parent = null;
+            Node<T> parent;
             for (; ; ) {
                 if (value.compareTo(current.value) < 0) { //  value < current
                     parent = current;
@@ -29,7 +30,7 @@ public class LinkedBinaryTree<T extends Comparable<T>> implements BinaryTree<T> 
                     if (current == null) {
                         parent.leftChild = new Node<>(value, null, null);
                         size++;
-                        break;
+                        return true;
                     }
                 } else if (value.compareTo(current.value) > 0) {
                     parent = current;
@@ -37,7 +38,7 @@ public class LinkedBinaryTree<T extends Comparable<T>> implements BinaryTree<T> 
                     if (current == null) {
                         parent.rightChild = new Node<>(value, null, null);
                         size++;
-                        break;
+                        return true;
                     }
                 } else {
                     // 重复元素
@@ -47,6 +48,19 @@ public class LinkedBinaryTree<T extends Comparable<T>> implements BinaryTree<T> 
         }
 
         return true;
+    }
+
+    private List<Node<T>> searchTrack;
+
+    private Node<T> search(Node<T> node, T key) {
+        if (node == null) return null;
+
+        if (searchTrack != null) searchTrack.add(node);
+
+        T value = node.value;
+        if (value.equals(key)) return node;
+        else if (value.compareTo(key) < 0) return search(node.rightChild, key);
+        else return search(node.leftChild, key);
     }
 
     private void initialRoot(T value) {
@@ -59,17 +73,36 @@ public class LinkedBinaryTree<T extends Comparable<T>> implements BinaryTree<T> 
     }
 
     @Override
-    public boolean delete(T value) {
-        return false;
-    }
+    public T delete(T value) {
+        if (searchTrack != null) searchTrack.clear();
+        else searchTrack = new ArrayList<>();
 
+        Node<T> node = search(root, value);
+        if (node == null) return null;
+
+        if (node.leftChild == null && node.rightChild == null) {
+            //删除叶子节点
+            Node<T> parent = searchTrack.get(searchTrack.size() - 2);
+            if (parent.leftChild == node) parent.leftChild = null;
+            else parent.rightChild = null;
+
+            return node.value;
+
+        } else if (node.leftChild == null || node.rightChild == null) {
+            //删除结点只有一个子节点
+            Node<T> parent = searchTrack.get(searchTrack.size() - 2);
+            if (parent.leftChild == node) parent.leftChild = node.leftChild == null ? node.rightChild : node.leftChild;
+            else parent.rightChild = node.leftChild == null ? node.rightChild : node.leftChild;
+
+            return node.value;
+        } else {
+            //删除结点有两个节点，较复杂，不实现
+            throw new IllegalAccessError();
+        }
+    }
 
     public int size() {
         return size;
-    }
-
-    public void recursion(boolean enable) {
-        recursion = enable;
     }
 
     private class Node<T> {
@@ -93,40 +126,16 @@ public class LinkedBinaryTree<T extends Comparable<T>> implements BinaryTree<T> 
 
             switch (traverse) {
                 case TRAVERSE_DLR:
-                    dlr();
+                    dlr(root);
                     break;
                 case TRAVERSE_LDR:
-                    ldr();
+                    ldr(root);
                     break;
                 case TRAVERSE_LRD:
-                    lrd();
+                    lrd(root);
                     break;
             }
             iterator = values.iterator();
-        }
-
-        private void lrd() {
-            if (recursion) {
-                lrd(root);
-            } else {
-                //TODO 完善非递归的遍历
-            }
-        }
-
-        private void ldr() {
-            if (recursion) {
-                ldr(root);
-            } else {
-                //TODO 完善非递归的遍历
-            }
-        }
-
-        private void dlr() {
-            if (recursion) {
-                dlr(root);
-            } else {
-                //TODO 完善非递归的遍历
-            }
         }
 
         /**

@@ -12,7 +12,7 @@ public class Test {
 
 
     public static void main(String[] args) {
-        LinkedBinaryTree<Integer> tree = new LinkedBinaryTree<>();
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
         tree.add(1);
         tree.add(3);
         tree.add(23);

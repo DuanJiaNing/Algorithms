@@ -48,5 +48,5 @@ public interface BinaryTree<T> {
      * @param value
      * @return
      */
-    boolean delete(T value);
+    T delete(T value);
 }
