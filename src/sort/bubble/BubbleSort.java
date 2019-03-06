@@ -1,7 +1,9 @@
 package sort.bubble;
 
 import sort.Sortable;
+import util.P;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
 /**
@@ -22,21 +24,46 @@ public class BubbleSort<T> implements Sortable<T> {
 
         for (int i = 0; i < sour.length - 1; i++) {
             needIterator = false;
-            for (int j = i + 1; j < sour.length; j++) {
-                current = sour[i];
-                after = sour[j];
-                if (comparator.compare(current, after) > 0) { // current > after
-                    sour[i] = after;
-                    sour[j] = current;
+            for (int j = 0; j < sour.length - 1 - i; j++) {
+                current = sour[j];
+                after = sour[j + 1];
+                if (comparator.compare(current, after) < 0) {
+                    sour[j] = after;
+                    sour[j + 1] = current;
 
                     count++;
                     needIterator = true;
                 }
             }
-            if (!needIterator) {
+            if (!needIterator)
                 break;
-            }
+
         }
         return count;
+
+//        for (int i = 0; i < sour.length - 1; i++) {
+//            needIterator = false;
+//            for (int j = i + 1; j < sour.length; j++) {
+//                current = sour[i];
+//                after = sour[j];
+//                if (comparator.compare(current, after) > 0) { // current > after
+//                    sour[i] = after;
+//                    sour[j] = current;
+//
+//                    count++;
+//                    needIterator = true;
+//                }
+//            }
+//            if (!needIterator) {
+//                break;
+//            }
+//        }
+    }
+
+    public static void main(String[] args) {
+        BubbleSort<Integer> sort = new BubbleSort<>();
+        Integer[] array = new Integer[]{5,4,3,1};
+        P.out(sort.sort(array, Integer::compareTo));
+        P.out(array);
     }
 }
