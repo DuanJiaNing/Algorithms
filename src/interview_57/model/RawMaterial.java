@@ -1,10 +1,10 @@
-package interview_57;
+package interview_57.model;
 
 import java.util.List;
 
 /**
  * Created on 2019/3/6.
- * 原材料、其供应时间和数量
+ * 原材料、其供应时间和日生产量
  *
  * @author DuanJiaNing
  */

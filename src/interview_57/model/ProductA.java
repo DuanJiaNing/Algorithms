@@ -1,10 +1,10 @@
-package interview_57;
+package interview_57.model;
 
 import java.util.List;
 
 /**
  * Created on 2019/3/6.
- * 产品
+ * A 类产品
  *
  * @author DuanJiaNing
  */

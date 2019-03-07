@@ -1,10 +1,10 @@
-package interview_57;
+package interview_57.model;
 
 import java.io.Serializable;
 
 /**
  * Created on 2019/3/6.
- * 产品原材料信息
+ * 产品原材料
  *
  * @author DuanJiaNing
  */
